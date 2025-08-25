@@ -1,1 +1,1 @@
-# Jonathan-Konrad.github.io
+# jonathan-konrad.github.io
