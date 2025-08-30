@@ -1,12 +1,12 @@
-# 📦 Project Name
+# 📦 Variability of VHzQs
 
-> One-liner description of your project.
+> Photometry and quantitative analysis of J-Band magnitude variability over z-scaled time intervals.
 >
 > Optional: Add a cool tagline or logo here!
 
-![License](https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO_NAME)
-![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO_NAME/main.yml)
-![Version](https://img.shields.io/github/v/release/YOUR_USERNAME/YOUR_REPO_NAME)
+![License](https://img.shields.io/github/license/Jonathan-Konrad/jonathan-konrad)
+![Build Status](https://img.shields.io/github/actions/workflow/status/Jonathan-Konrad/jonathan-konrad/main.yml)
+![Version](https://img.shields.io/github/v/release/Jonathan-Konrad/jonathan-konrad)
 
 ---
 
