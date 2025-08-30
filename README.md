@@ -4,7 +4,7 @@
 >
 > Optional: Add a cool tagline or logo here!
 
-![License](https://img.shields.io/github/license/Jonathan-Konrad/jonathan-konrad)
+![License](https://img.shields.io/github/license/Jonathan-Konrad/jonathan-konrad?style=flat-square)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/Jonathan-Konrad/jonathan-konrad/main.yml)
 ![Version](https://img.shields.io/github/v/release/Jonathan-Konrad/jonathan-konrad)
 
