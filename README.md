@@ -20,16 +20,16 @@
 
 ## 🧠 About
 
-This is a collection of python code used to reduce and analyze scientific raw data from the GROND observatory to measure explicitly J-Band magnitudes in high z (z>5.3) quasars. Other utilities are also uploaded here, of wich I do not claim ownership. 
-These include modified configuration and parameter files (SExtractor), a 3x3 gaussian convolution map and raw public data from the GROND observatory, accessed through the ESO archive.
+This is a collection of python code used to reduce and analyze scientific raw data from the GROND observatory to measure explicitly J-Band magnitudes in high z (z>5.3) quasars. Other utilities are also uploaded here, of wich I do not claim ownership.\\
+These include modified configuration and parameter files (SExtractor), a 3x3 gaussian convolution map and raw public data from the GROND observatory, accessed through the ESO archive.\\
 J-Band exposures were reduced with theli v3, a reduction pipeline for several observatories by Mischa Schirmer. 
 
 ---
 
 ## ✨ Features
 
-Iterative SExtractor bash-shell (variables: aperture, 3x3 convolution matrix), also grabs zero-points from .fits header
-
+Iterative SExtractor bash-shell (variables: aperture, 3x3 convolution matrix), also grabs zero-points from .fits header\\
+\\
 Collection of three major codes, interlocking to order, extract and calculate errors on J-Band magnitudes, J-Band magnitudes themselves and variability from a compiled list of archival J-Band magnitudes. Also z-scales time intervals to the quasar restframe.
 
 ---
