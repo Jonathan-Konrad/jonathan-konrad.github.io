@@ -1,8 +1,8 @@
 # 📦 Variability of VHzQs
 
-> Photometry and quantitative analysis of J-Band magnitude variability over z-scaled time intervals.
+> Photometry and quantitative analysis of J-Band magnitude variability over z-scaled time intervals. Later upload version will include further analysis of the observed (non-)variability.
 >
-> Optional: Add a cool tagline or logo here!
+>The code and subsequent master's thesis were compiled at the Frontier research group at ITP Heidelberg.
 
 ![License](https://img.shields.io/github/license/Jonathan-Konrad/jonathan-konrad.github.io?style=flat-square)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/Jonathan-Konrad/jonathan-konrad.github.io/main.yml)
@@ -14,49 +14,25 @@
 
 - [About](#about)
 - [Features](#features)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [API](#api)
-- [Technologies](#technologies)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ---
 
 ## 🧠 About
 
-Describe your project:
-
-- What does it do?
-- Who is it for?
-- Why did you build it?
-- What problem does it solve?
-
-Example:
-
-> This project is a lightweight web-based Markdown editor built for technical writers and developers. It supports live preview, keyboard shortcuts, and syntax highlighting.
+This is a collection of python code used to reduce and analyze scientific raw data from the GROND observatory to measure explicitly J-Band magnitudes in high z (z>5.3) quasars. Other utilities are also uploaded here, of wich I do not claim ownership. 
+These include modified configuration and parameter files (SExtractor), a 3x3 gaussian convolution map and raw public data from the GROND observatory, accessed through the ESO archive.
+J-Band exposures were reduced with theli v3, a reduction pipeline for several observatories by Mischa Schirmer. 
 
 ---
 
 ## ✨ Features
 
-List key features or functionalities:
+Iterative SExtractor bash-shell (variables: aperture, 3x3 convolution matrix), also grabs zero-points from .fits header
 
-- ✅ Easy to use UI
-- 🌐 REST API support
-- 🧪 Unit and integration tests
-- 📦 Deploy-ready with Docker
-- 🔒 JWT authentication
+Collection of three major codes, interlocking to order, extract and calculate errors on J-Band magnitudes, J-Band magnitudes themselves and variability from a compiled list of archival J-Band magnitudes. Also z-scales time intervals to the quasar restframe.
 
 ---
+##   Contact
 
-## 🖼️ Screenshots
-
-Include screenshots or GIFs (optional):
-
-```bash
-# Place images in a `screenshots/` folder
-![Screenshot](screenshots/homepage.png)
+jojokonrad@googlemail.com
