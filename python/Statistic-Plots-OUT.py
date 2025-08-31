@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # -----------------------------------------------------------
 # 1) Read the TSV
 # -----------------------------------------------------------
-tsv_path = "/utils/catalog.tsv"
+tsv_path = "../utils/catalog.tsv"
 df = pd.read_csv(tsv_path, sep="\t")
 
 # keep only numeric ΔJ values
@@ -50,7 +50,7 @@ from scipy.stats import norm
 # -----------------------------------------------------------
 # 1) Read TSV
 # -----------------------------------------------------------
-tsv_path = "/utils/catalog.tsv"
+tsv_path = "../utils/catalog.tsv"
 df = pd.read_csv(tsv_path, sep="\t")
 
 # Ensure numeric types
@@ -227,7 +227,7 @@ n = 1.25  # Exponent for time dilation correction: Δt_corrected = Δt / (1 + z)
 # -----------------------------------------------------------
 # 1) Read catalogue and apply SNR > 3 cut
 # -----------------------------------------------------------
-tsv_path = "/utils/catalog.tsv"
+tsv_path = "../utils/catalog.tsv"
 df = pd.read_csv(tsv_path, sep="\t")
 
 snr = pd.to_numeric(df["SNR"], errors="coerce")
@@ -315,7 +315,7 @@ cmap_name = 'plasma'  # colour‑map for redshift
 # -----------------------------------------------------------
 # 1) Read catalogue and apply SNR > 3 cut
 # -----------------------------------------------------------
-tsv_path = "/utils/catalog.tsv"
+tsv_path = "../utils/catalog.tsv"
 df = pd.read_csv(tsv_path, sep="\t")
 
 snr = pd.to_numeric(df["SNR"], errors="coerce")
@@ -405,7 +405,7 @@ import os, re
 # SETTINGS
 # -----------------------------------------------------------
 cmap_name       = "plasma"
-parent_folder   = "/utils/fits_folder"
+parent_folder   = "../utils/fits_folder"
 photometry_path = os.path.join(parent_folder, "photometry_matches.tsv")
 newcatalog_path = os.path.join(parent_folder, "catalog.tsv")
 
@@ -524,7 +524,7 @@ cmap_name = 'plasma'  # colour‑map for SNR
 # -----------------------------------------------------------
 # 1) Read catalogue and apply SNR > 3 cut
 # -----------------------------------------------------------
-tsv_path = "/utils/catalog.tsv"
+tsv_path = "../utils/catalog.tsv"
 df = pd.read_csv(tsv_path, sep="\t")
 
 df["SNR"] = pd.to_numeric(df["SNR"], errors="coerce")

@@ -18,7 +18,7 @@ alpha = 'α'
 plt.xlabel('wavelength ({})'.format(angstrom))
 plt.ylabel('flux density (erg/s¹/cm²/{}¹)'.format(angstrom))
 
-data = fits.open("/utils/optical_nir_qso_sed_001.fits")[1].data
+data = fits.open("../utils/optical_nir_qso_sed_001.fits")[1].data
  
 data2=[]                  # testdata to check normalizations (flat profile from 5000A-15000A)
 for j in range(10001):
@@ -38,32 +38,32 @@ plt.plot(x, np.array(flux), 'k-', linewidth=.6, label='composite QSO spectrum Gl
 
 
 
-GRONDcurve = np.loadtxt('/utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
+GRONDcurve = np.loadtxt('../utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
 headers = GRONDcurve[0,:]
 xG = GRONDcurve[:,0]
 GFilter = GRONDcurve[:,5]
 # plt.plot(10*xG, GFilter*1e-12, 'c-', linewidth=.6, label='GROND filtercurve')
 
-VISTAcurve = np.loadtxt('/utils/filtercurves/VISTA_filtercurves/Paranal_VISTA.J_trunc.dat')
+VISTAcurve = np.loadtxt('../utils/filtercurves/VISTA_filtercurves/Paranal_VISTA.J_trunc.dat')
 xV = VISTAcurve[:,0]
 VFilter = VISTAcurve[:,1]
 # plt.plot(10*xV, VFilter*1e-14, 'b-', linewidth=.6, label='VISTA filtercurve')        # -14 comes from -12 * -2 because VFilter was normalized to 100, not 1
 
-UKIDSScurve = np.loadtxt('/utils/filtercurves/UKIDDS_filtercurve_J_trunc.dat')
+UKIDSScurve = np.loadtxt('../utils/filtercurves/UKIDDS_filtercurve_J_trunc.dat')
 xU = UKIDSScurve[:,0]
 UFilter = UKIDSScurve[:,1]
 # plt.plot(xU, UFilter*1e-12, 'm-', linewidth=.6, label='UKIDSS filtercurve')
 
-FourStarscurve = np.loadtxt('/utils/filtercurves/LCO_FourStar.J.dat')
+FourStarscurve = np.loadtxt('../utils/filtercurves/LCO_FourStar.J.dat')
 xF = FourStarscurve[:,0]
 FFilter = FourStarscurve[:,1]
 # plt.plot(xF, FFilter*1e-12, 'k-', linewidth=.6, label='FourStars filtercurve')
 
-GNIRScurve = np.loadtxt('/utils/filtercurves/Gemini_GNIRS.J_trunc.dat')
+GNIRScurve = np.loadtxt('../utils/filtercurves/Gemini_GNIRS.J_trunc.dat')
 xGN = GNIRScurve[:,0]
 GNFilter = GNIRScurve[:,1]
 
-TwoMASScurve = np.loadtxt('/utils/filtercurves/2MASS_2MASS.J_trunc.dat')
+TwoMASScurve = np.loadtxt('../utils/filtercurves/2MASS_2MASS.J_trunc.dat')
 xT = TwoMASScurve[:,0]
 TFilter = TwoMASScurve[:,1]
 
@@ -199,19 +199,19 @@ def load_2col_filter(path):
     return arr[:, 0], arr[:, 1]
 
 # Load QSO spectrum from FITS file
-data = fits.open("/utils/optical_nir_qso_sed_001.fits")[1].data
+data = fits.open("../utils/optical_nir_qso_sed_001.fits")[1].data
 
 # Load filter curves from old exact paths
-xMKO, MKOFilter = load_2col_filter('/utils/filtercurves/MKO_NSFCam.J.dat')
-xMMT, MMTFilter = load_2col_filter('/utils/filtercurves/MMT_SWIRC.J.dat')
-xV, VFilter = load_2col_filter('/utils/filtercurves/Paranal_VISTA.J.dat')
-xSubaru, SubaruFilter = load_2col_filter('/utils/filtercurves/Subaru_MOIRCS.J.dat')
-xUKIRT, UKIRTFilter = load_2col_filter('/utils/filtercurves/UKIRT_WFCAM.J.dat')
-xFour, FourFilter = load_2col_filter('/utils/filtercurves/LCO_FourStar.J_trunc.dat')
-xSOFI, SOFIFilter = load_2col_filter('/utils/filtercurves/LaSilla_SOFI.J.dat')
+xMKO, MKOFilter = load_2col_filter('../utils/filtercurves/MKO_NSFCam.J.dat')
+xMMT, MMTFilter = load_2col_filter('../utils/filtercurves/MMT_SWIRC.J.dat')
+xV, VFilter = load_2col_filter('../utils/filtercurves/Paranal_VISTA.J.dat')
+xSubaru, SubaruFilter = load_2col_filter('../utils/filtercurves/Subaru_MOIRCS.J.dat')
+xUKIRT, UKIRTFilter = load_2col_filter('../utils/filtercurves/UKIRT_WFCAM.J.dat')
+xFour, FourFilter = load_2col_filter('../utils/filtercurves/LCO_FourStar.J_trunc.dat')
+xSOFI, SOFIFilter = load_2col_filter('../utils/filtercurves/LaSilla_SOFI.J.dat')
 
 # Load GROND filter from multi-column file, column 0 = wavelength, column 5 = J-band filter
-GRONDcurve = np.loadtxt('/utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
+GRONDcurve = np.loadtxt('../utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
 xG = GRONDcurve[:, 0]
 GFilter = GRONDcurve[:, 5]
 
@@ -295,7 +295,7 @@ plt.tight_layout()
 plt.show()
 
 # Save results to file
-out_file = '/utils/Instrument_to_GROND.txt'
+out_file = '../utils/Instrument_to_GROND.txt'
 with open(out_file, 'w') as f_out:
     f_out.write("# Redshift  MKO->GROND  MMT->GROND  VISTA->GROND  "
                 "SUBARU->GROND  UKIRT->GROND  FourStar->GROND  SOFI->GROND\n")
@@ -324,20 +324,20 @@ def load_2col_filter(path):
     return arr[:,0], arr[:,1]
 
 # Load filters
-xMKO, MKOFilter = load_2col_filter('/utils/filtercurves/MKO_NSFCam.J.dat')
-xMMT, MMTFilter = load_2col_filter('/utils/filtercurves/MMT_SWIRC.J.dat')
-xV, VFilter   = load_2col_filter('/utils/filtercurves/Paranal_VISTA.J.dat')
-xSubaru, SubaruFilter = load_2col_filter('/utils/filtercurves/Subaru_MOIRCS.J.dat')
-xUKIRT, UKIRTFilter   = load_2col_filter('/utils/filtercurves/UKIRT_WFCAM.J.dat')
-xFour, FourFilter     = load_2col_filter('/utils/filtercurves/LCO_FourStar.J_trunc.dat')
-xSOFI, SOFIFilter     = load_2col_filter('/utils/filtercurves/LaSilla_SOFI.J.dat')
+xMKO, MKOFilter = load_2col_filter('../utils/filtercurves/MKO_NSFCam.J.dat')
+xMMT, MMTFilter = load_2col_filter('../utils/filtercurves/MMT_SWIRC.J.dat')
+xV, VFilter   = load_2col_filter('../utils/filtercurves/Paranal_VISTA.J.dat')
+xSubaru, SubaruFilter = load_2col_filter('../utils/filtercurves/Subaru_MOIRCS.J.dat')
+xUKIRT, UKIRTFilter   = load_2col_filter('../utils/filtercurves/UKIRT_WFCAM.J.dat')
+xFour, FourFilter     = load_2col_filter('../utils/filtercurves/LCO_FourStar.J_trunc.dat')
+xSOFI, SOFIFilter     = load_2col_filter('../utils/filtercurves/LaSilla_SOFI.J.dat')
 
-GRONDcurve = np.loadtxt('/utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
+GRONDcurve = np.loadtxt('../utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
 xG = GRONDcurve[:,0]
 GFilter = GRONDcurve[:,5]
 
 # Load QSO SED
-with fits.open('/utils/optical_nir_qso_sed_001.fits') as hdul:
+with fits.open('../utils/optical_nir_qso_sed_001.fits') as hdul:
     data = hdul[1].data
     sed_wave_rest = data['wavelength']        # Å, rest‑frame
     sed_flux      = 4e12 * data['flux']       # scaled flux
@@ -423,15 +423,15 @@ def load_2col_filter(path):
 # ---------------------------------------------------------------
 # load all filter curves (unchanged)
 # ---------------------------------------------------------------
-xMKO,   MKOFilter    = load_2col_filter('/utils/filtercurves/MKO_NSFCam.J.dat')
-xMMT,   MMTFilter    = load_2col_filter('/utils/filtercurves/MMT_SWIRC.J.dat')
-xV,     VFilter      = load_2col_filter('/utils/filtercurves/Paranal_VISTA.J.dat')
-xSubaru,SubaruFilter = load_2col_filter('/utils/filtercurves/Subaru_MOIRCS.J.dat')
-xUKIRT, UKIRTFilter  = load_2col_filter('/utils/filtercurves/UKIRT_WFCAM.J.dat')
-xFour,  FourFilter   = load_2col_filter('/utils/filtercurves/LCO_FourStar.J_trunc.dat')
-xSOFI,  SOFIFilter   = load_2col_filter('/utils/filtercurves/LaSilla_SOFI.J.dat')
+xMKO,   MKOFilter    = load_2col_filter('../utils/filtercurves/MKO_NSFCam.J.dat')
+xMMT,   MMTFilter    = load_2col_filter('../utils/filtercurves/MMT_SWIRC.J.dat')
+xV,     VFilter      = load_2col_filter('../utils/filtercurves/Paranal_VISTA.J.dat')
+xSubaru,SubaruFilter = load_2col_filter('../utils/filtercurves/Subaru_MOIRCS.J.dat')
+xUKIRT, UKIRTFilter  = load_2col_filter('../utils/filtercurves/UKIRT_WFCAM.J.dat')
+xFour,  FourFilter   = load_2col_filter('../utils/filtercurves/LCO_FourStar.J_trunc.dat')
+xSOFI,  SOFIFilter   = load_2col_filter('../utils/filtercurves/LaSilla_SOFI.J.dat')
 
-GRONDcurve = np.loadtxt('/utils/filtercurves/GROND_filtercurves_trunc.txt',
+GRONDcurve = np.loadtxt('../utils/filtercurves/GROND_filtercurves_trunc.txt',
                         skiprows=1)
 xG = GRONDcurve[:, 0]
 GFilter = GRONDcurve[:, 5]
@@ -454,7 +454,7 @@ GFilter_norm      = area_normalize(10*xG,  GFilter)  # ×10 wavelength scaling
 # ---------------------------------------------------------------
 # load the rest‑frame quasar SED
 # ---------------------------------------------------------------
-spec = fits.open('/utils/optical_nir_qso_sed_001.fits')[1].data
+spec = fits.open('../utils/optical_nir_qso_sed_001.fits')[1].data
 lam_rest = spec['wavelength']
 flux_rest = spec['flux']
 
@@ -525,15 +525,15 @@ def load_2col_filter(path):
     return arr[:,0], arr[:,1]
 
 # Load filters
-xMKO, MKOFilter = load_2col_filter('/utils/filtercurves/MKO_NSFCam.J.dat')
-xMMT, MMTFilter = load_2col_filter('/utils/filtercurves/MMT_SWIRC.J.dat')
-xV, VFilter   = load_2col_filter('/utils/filtercurves/Paranal_VISTA.J.dat')
-xSubaru, SubaruFilter = load_2col_filter('/utils/filtercurves/Subaru_MOIRCS.J.dat')
-xUKIRT, UKIRTFilter   = load_2col_filter('/utils/filtercurves/UKIRT_WFCAM.J.dat')
-xFour, FourFilter     = load_2col_filter('/utils/filtercurves/LCO_FourStar.J_trunc.dat')
-xSOFI, SOFIFilter     = load_2col_filter('/utils/filtercurves/LaSilla_SOFI.J.dat')
+xMKO, MKOFilter = load_2col_filter('../utils/filtercurves/MKO_NSFCam.J.dat')
+xMMT, MMTFilter = load_2col_filter('../utils/filtercurves/MMT_SWIRC.J.dat')
+xV, VFilter   = load_2col_filter('../utils/filtercurves/Paranal_VISTA.J.dat')
+xSubaru, SubaruFilter = load_2col_filter('../utils/filtercurves/Subaru_MOIRCS.J.dat')
+xUKIRT, UKIRTFilter   = load_2col_filter('../utils/filtercurves/UKIRT_WFCAM.J.dat')
+xFour, FourFilter     = load_2col_filter('../utils/filtercurves/LCO_FourStar.J_trunc.dat')
+xSOFI, SOFIFilter     = load_2col_filter('../utils/filtercurves/LaSilla_SOFI.J.dat')
 
-GRONDcurve = np.loadtxt('/utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
+GRONDcurve = np.loadtxt('../utils/filtercurves/GROND_filtercurves_trunc.txt', skiprows=1)
 xG = GRONDcurve[:,0]
 GFilter = GRONDcurve[:,5]
 
@@ -548,7 +548,7 @@ filters = [
     ('MPGESO GROND', 10*xG, GFilter, 'brown')
 ]
 
-with fits.open('/utils/optical_nir_qso_sed_001.fits') as hdul:
+with fits.open('../utils/optical_nir_qso_sed_001.fits') as hdul:
     data = hdul[1].data
     sed_wave_rest = data['wavelength']
     sed_flux      = 4e12 * data['flux']
@@ -628,7 +628,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load data (skiprows=1 since you said headers are on first line)
-GRONDcurve = np.loadtxt('/utils/filtercurves/GROND_filtercurves.txt', skiprows=1)
+GRONDcurve = np.loadtxt('../utils/filtercurves/GROND_filtercurves.txt', skiprows=1)
 
 xG = 10*GRONDcurve[:,0]  # wavelengths in Å, presumably starting at 3480, step 10
 filters = {
@@ -690,9 +690,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # -------- SETTINGS --------
-RESULT_FILE = "/utils/Instrument_to_GROND.txt"
+RESULT_FILE = "../utils/Instrument_to_GROND.txt"
 FIGSIZE     = (10, 6)
-CUTOUT_FILE = "/utils/Instrument_to_GROND_plot.png"  # optional save
+CUTOUT_FILE = "../utils/Instrument_to_GROND_plot.png"  # optional save
 # --------------------------
 
 # ---------- 1. LOAD THE DATA ----------

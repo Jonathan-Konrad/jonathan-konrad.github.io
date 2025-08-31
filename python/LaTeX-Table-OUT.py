@@ -13,14 +13,14 @@ import astropy.units as u
 # 1.  Load main photometry file
 # ------------------------------------------------------------------
 phot_df = pd.read_csv(
-    "/utils/photometry_matches.txt",
+    "../utils/photometry_matches.txt",
     sep="\t"
 )
 
 # ------------------------------------------------------------------
 # 2.  Load reference data  (now includes to_AB_offset)
 # ------------------------------------------------------------------
-references_path = "/utils/references.txt"
+references_path = "../utils/references.txt"
 if os.path.exists(references_path):
     try:
         ref_df = pd.read_csv(
@@ -145,7 +145,7 @@ from astropy.coordinates import SkyCoord
 import astropy.units as u
 
 # Load instrument offsets
-OFFSETS_PATH = "/utils/Instrument_to_GROND.txt" 
+OFFSETS_PATH = "../utils/Instrument_to_GROND.txt" 
 if not os.path.exists(OFFSETS_PATH):
     raise FileNotFoundError(f"{OFFSETS_PATH} not found")
 
@@ -177,13 +177,13 @@ def nearest_offset(z, column):
 # ---------------------------------------------------------
 # 1.  Load photometry_matches.txt 
 # ---------------------------------------------------------
-phot_df = pd.read_csv("/utils/photometry_matches.txt",
+phot_df = pd.read_csv("../utils/photometry_matches.txt",
                       sep="\t")
 
 # -------------------------------------------------------------------------
 # 2.  Load reference catalogue
 # -------------------------------------------------------------------------
-REF_PATH = "/utils/references.txt"
+REF_PATH = "../utils/references.txt"
 ref_df, ref_coords = None, None
 if os.path.exists(REF_PATH):
     ref_df = pd.read_csv(REF_PATH, sep="\t",
@@ -194,7 +194,7 @@ if os.path.exists(REF_PATH):
                           ref_df["dec_deg"].values * u.deg)
 
 
-EXPTIME_PATH = "/utils/exptimes.txt"   # format: name\texptime
+EXPTIME_PATH = "../utils/exptimes.txt"   # format: name\texptime
 
 if os.path.exists(EXPTIME_PATH):
     try:
@@ -260,8 +260,8 @@ def get_offset_column(inst_raw: str | None) -> str | None:
 # -------------------------------------------
 # 6.  Outputs
 # -------------------------------------------
-LATEX_OUT = "/utils/latex_table_rows.txt"
-TSV_OUT   = "/utils/table_rows.tsv"
+LATEX_OUT = "../utils/latex_table_rows.txt"
+TSV_OUT   = "../utils/table_rows.tsv"
 
 with open(LATEX_OUT, "w") as latex_f, open(TSV_OUT, "w") as tsv_f:
 

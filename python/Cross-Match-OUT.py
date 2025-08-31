@@ -18,10 +18,10 @@ from photutils.aperture import CircularAperture, aperture_photometry
 start = time.time()
 
 # === SETTINGS ===
-catalog_folder = "/utils/fits_folder/catalogs"
-background_rms_folder = "/utils/fits_folder/backgrounds_rms"
-ods_file_path = "/utils/aa61_fan_qso_database.ods"
-output_file = "/utils/photometry_matches.txt"
+catalog_folder = "../utils/fits_folder/catalogs"
+background_rms_folder = "../utils/fits_folder/backgrounds_rms"
+ods_file_path = "../utils/aa61_fan_qso_database.ods"
+output_file = "../utils/photometry_matches.txt"
 
 def find_closest_in_ods(ods_file, target_ra, target_dec):
     df = pd.read_excel(ods_file, engine="odf", header=[0, 1])
@@ -218,10 +218,10 @@ from photutils.aperture import CircularAperture, aperture_photometry
 
 start = time.time()
 
-catalog_folder = "/utils/fits_folder/catalogs"
-background_rms_folder = "/utils/fits_folder/backgrounds_rms"
-ods_file_path = "/utils/aa61_fan_qso_database.ods"
-output_file = "/utils/photometry_matches.txt"
+catalog_folder = "../utils/fits_folder/catalogs"
+background_rms_folder = "../utils/fits_folder/backgrounds_rms"
+ods_file_path = "../utils/aa61_fan_qso_database.ods"
+output_file = "../utils/photometry_matches.txt"
 FIDUCIAL_ZPD_ERR = 0.1
 
 def find_closest_in_ods(ods_file, target_ra, target_dec):
@@ -400,10 +400,10 @@ from photutils.aperture import CircularAperture, aperture_photometry
 # ----------------------------------------------------------------------
 # 0.  SETTINGS (edit folder paths here)
 # ----------------------------------------------------------------------
-catalog_folder        = "/utils/fits_folder/catalogs"
-background_rms_folder = "/utils/fits/folder/backgrounds_rms"
-ods_file_path         = "/utils/aa61_fan_qso_database.ods"
-output_file           = "/utils/photometry_matches.txt"
+catalog_folder        = "../utils/fits_folder/catalogs"
+background_rms_folder = "../utils/fits/folder/backgrounds_rms"
+ods_file_path         = "../utils/aa61_fan_qso_database.ods"
+output_file           = "../utils/photometry_matches.txt"
 
 MAX_SEP_ARCSEC = 2.0          # <-- configurable match radius
 FIDUCIAL_ZPD_ERR = 0.10       # fallback ZP‑error if none in filename
@@ -650,10 +650,10 @@ from photutils.aperture import CircularAperture, aperture_photometry
 # ----------------------------------------------------------------------
 # 0.  SETTINGS
 # ----------------------------------------------------------------------
-catalog_folder        = "/utils/fits_folder/catalogs"
-background_rms_folder = "/utils/fits_folder/backgrounds_rms"
-ods_file_path         = "/utils/aa61_fan_qso_database.ods"
-output_file           = "/utils/photometry_matches.tsv"
+catalog_folder        = "../utils/fits_folder/catalogs"
+background_rms_folder = "../utils/fits_folder/backgrounds_rms"
+ods_file_path         = "../utils/aa61_fan_qso_database.ods"
+output_file           = "../utils/photometry_matches.tsv"
 
 MAX_SEP_ARCSEC = 2.0          # match radius of precise RA/DEC from Fan23 with catalog detections
 
@@ -907,10 +907,10 @@ from photutils.aperture import CircularAperture, aperture_photometry
 # ----------------------------------------------------------------------
 # 0.  SETTINGS
 # ----------------------------------------------------------------------
-catalog_folder        = "/home/jk/Desktop/reduced1/onlyfits/catalogs"
-background_rms_folder = "/home/jk/Desktop/reduced1/onlyfits/backgrounds_rms"
-ods_file_path         = "/home/jk/Desktop/aa61_fan_qso_database.ods"
-output_file           = "/home/jk/Desktop/reduced1/onlyfits/photometry_matches.tsv"
+catalog_folder        = "../utils/fits_folder/catalogs"
+background_rms_folder = "../utils/fits_folder/backgrounds_rms"
+ods_file_path         = "../utils/fits_folder/aa61_fan_qso_database.ods"
+output_file           = "../utils/fits_folder/photometry_matches.tsv"
 
 MAX_SEP_ARCSEC = 2.0          # match radius of precise RA/DEC from Fan23 with catalog detections
 

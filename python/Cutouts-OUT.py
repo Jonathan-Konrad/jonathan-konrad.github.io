@@ -24,7 +24,7 @@ from matplotlib.patheffects import withStroke
 
 
 
-with fits.open('/utils/J2329-1520_nirJ_coadd.fits') as hdul:  #online-github repo contains J2329-1520_nirJ_coadd.fits as an example
+with fits.open('../utils/J2329-1520_nirJ_coadd.fits') as hdul:  #online-github repo contains J2329-1520_nirJ_coadd.fits as an example
     #hdul.info()
     data=hdul[0].data
     header = hdul[0].header
@@ -121,8 +121,8 @@ import matplotlib.patches as patches
 import re
 
 # === SETTINGS ===
-photometry_file = "/utils/photometry_matches.txt"
-fits_folder = "/utils/fits_folder"
+photometry_file = "../utils/photometry_matches.txt"
+fits_folder = "../utils/fits_folder"
 output_folder = os.path.join(fits_folder, "postage_stamps")
 cutout_size = 20  # size in pixels
 
@@ -218,8 +218,8 @@ import matplotlib.patches as patches
 import re
 
 # === SETTINGS ===
-photometry_file = "/utils/photometry_matches.txt"
-fits_folder = "/utils/fits_folder"
+photometry_file = "../utils/photometry_matches.txt"
+fits_folder = "../utils/fits_folder"
 output_folder = os.path.join(fits_folder, "postage_stamps_small")
 cutout_size = 10  # size in pixels
 
@@ -315,8 +315,8 @@ from astropy.wcs import WCS
 from astropy.nddata import Cutout2D
 
 # ========== SETTINGS ==========
-FITS_FOLDER   = "/utils/fits_folder/nondetect/"
-CATALOG_CSV   = "/utils/aa61_fan_qso_database.csv"  #not included in the online-repo, because it is courtesy of the 2020 Fan review paper
+FITS_FOLDER   = "../utils/fits_folder/nondetect/"
+CATALOG_CSV   = "../utils/aa61_fan_qso_database.csv"  #not included in the online-repo, because it is courtesy of the 2020 Fan review paper
 OUTPUT_SUBDIR = "nondetect_cutouts"
 CUTOUT_SIZE   = 10           # pixels (square)
 APER_DIAM     = 5            # pixels
