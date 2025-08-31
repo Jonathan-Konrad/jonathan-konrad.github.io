@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/github/license/Jonathan-Konrad/jonathan-konrad.github.io?style=flat-square)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/Jonathan-Konrad/jonathan-konrad.github.io/main.yml)
-![Version](https://img.shields.io/github/v/release/Jonathan-Konrad.github.io/jonathan-konrad)
+![Version](https://img.shields.io/github/v/release/Jonathan-Konrad/jonathan-konrad.github.io?include_prereleases)
 
 ---
 
