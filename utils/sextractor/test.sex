@@ -1,0 +1,25 @@
+CATALOG_NAME     output.cat         # Output catalog file name
+CATALOG_TYPE     ASCII_HEAD         # Format of the output catalog
+
+PARAMETERS_NAME  test.param      # File listing catalog columns to output
+
+GAIN		1.440E+03
+#PHOT_APERTURES   2            # Aperture diameters
+
+DETECT_MINAREA   2
+DETECT_THRESH    1.2
+# ANALYSIS_THRESH  3
+
+FILTER           Y                  # Enable filtering
+#FILTER_NAME      test.conv       # Use convolution kernel file
+
+#CLEAN            N
+#CLEAN_PARAM      1.0
+
+BACK_TYPE         AUTO          # Let SExtractor estimate background adaptively
+BACK_SIZE         64            # Background mesh size (can fine-tune for large-scale gradients)
+BACK_FILTERSIZE   3             # Smoothing for background
+#SEEING_FWHM       1.2
+
+PIXEL_SCALE      0                  # Use WCS from FITS header (0 = auto)
+VERBOSE_TYPE     NORMAL
